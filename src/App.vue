@@ -7,12 +7,12 @@
                         <v-btn color="primary" @click="addItem">Add to Queue</v-btn>
                     </v-flex>
                 </v-layout>
-                <snackbar-queue
+                <v-snackbar-queue
                     :items="items"
                     top
                     right
                     @remove="removeItem"
-                ></snackbar-queue>
+                ></v-snackbar-queue>
             </v-container>
         </v-content>
     </v-app>
@@ -20,12 +20,12 @@
 
 <script>
     import {uniqueId, findIndex} from 'underscore'
-    import SnackbarQueue from '@/components/SnackbarQueue'
+    import VSnackbarQueue from '@/components/VSnackbarQueue'
 
     export default {
         name: 'App',
         components: {
-            SnackbarQueue
+            VSnackbarQueue
         },
         data: () => ({
             items: [],

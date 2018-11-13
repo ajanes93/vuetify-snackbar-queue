@@ -1,7 +1,9 @@
 import Vue from 'vue'
-import './plugins/vuetify'
+import Vuetify from 'vuetify'
 import App from './App.vue'
+import "vuetify/dist/vuetify.min.css";
 
+Vue.use(Vuetify, {iconFont: 'md'})
 Vue.config.productionTip = false
 
 new Vue({

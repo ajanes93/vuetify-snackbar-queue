@@ -40,11 +40,9 @@
 
 <script>
     import {first, isEmpty} from 'underscore'
-    import {VSnackbar} from 'vuetify/lib'
 
     export default {
         name: 'VSnackbarQueue',
-        extends: VSnackbar,
         data: () => ({
             processing: false,
             timeoutId: false
@@ -56,6 +54,50 @@
             items: {
                 type: Array,
                 required: true
+            },
+            value: {
+                required: false,
+                default: false
+            },
+            timeout: {
+                required: false,
+                default: 6000
+            },
+            color: {
+                required: false,
+                default: 'error'
+            },
+            top: {
+                required: false,
+                default: false
+            },
+            right: {
+                required: false,
+                default: false
+            },
+            absolute: {
+                required: false,
+                default: false
+            },
+            autoHeight: {
+                required: false,
+                default: false
+            },
+            bottom: {
+                required: false,
+                default: false
+            },
+            left: {
+                required: false,
+                default: false
+            },
+            multiLine: {
+                required: false,
+                default: false
+            },
+            vertical: {
+                required: false,
+                default: false
             }
         },
         methods: {
