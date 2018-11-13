@@ -1,6 +1,6 @@
 {
   "name": "vuetify-snackbar-queue",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -24,5 +24,24 @@
     "vue-cli-plugin-vuetify": "^0.4.6",
     "vue-template-compiler": "^2.5.17",
     "vuetify-loader": "^1.0.5"
-  }
+  },
+  "description": ">Simple plugin for queueing v-snackbars in Vuetify * Extends VSnackbar component and adds items[] prop * Queues Snackbars displaying one at a time",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajanes93/vuetify-snackbar-queue.git"
+  },
+  "keywords": [
+    "vue",
+    "vuetify",
+    "plugin",
+    "snackbar",
+    "material"
+  ],
+  "author": "Andres Janes <me@andresjanes.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajanes93/vuetify-snackbar-queue/issues"
+  },
+  "homepage": "https://github.com/ajanes93/vuetify-snackbar-queue#readme"
 }
