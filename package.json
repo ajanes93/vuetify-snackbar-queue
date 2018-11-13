@@ -37,7 +37,7 @@
         "snackbar",
         "material"
     ],
-    "author": "Andres Janes <me@andresjanes.com>",
+    "author": "Andres Janes <dev@andresjanes.com>",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/ajanes93/vuetify-snackbar-queue/issues"
