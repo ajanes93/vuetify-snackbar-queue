@@ -39,7 +39,7 @@
 </template>
 
 <script>
-    import {first, isEmpty} from 'underscore'
+    /**
 
     export default {
         name: 'VSnackbarQueue',
@@ -105,8 +105,8 @@
                 const vm = this
                 vm.processing = true
 
-                if (!isEmpty(vm.items)) {
-                    const item = first(vm.items)
+                if (vm.items && Array.isArray(vm.items) && vm.items.length > 0) {
+                    const item = vm.items[0]
                     return vm.timeoutId = setTimeout(() => {
                         vm.removeItem(item.id)
                     }, vm.timeout)
