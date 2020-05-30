@@ -1,17 +1,17 @@
 <template>
     <v-app>
         <v-content>
-            <v-container grid-list-lg fluid>
+            <v-container fluid grid-list-lg>
                 <v-layout wrap>
                     <v-flex xs2>
-                        <v-btn color="primary" @click="addItem">Add to Queue</v-btn>
+                        <v-btn @click="addItem" color="primary">Add to Queue</v-btn>
                     </v-flex>
                 </v-layout>
                 <v-snackbar-queue
                     :items="items"
-                    top
-                    right
                     @remove="removeItem"
+                    right
+                    top
                 ></v-snackbar-queue>
             </v-container>
         </v-content>
@@ -51,7 +51,7 @@
             randomInt (min, max) {
                 return Math.floor(Math.random() * (max - min + 1)) + min
             },
-            uniqueId: (prefix) => `${prefix}_` + Math.random().toString(36).substr(2, 9),
+            uniqueId: (prefix) => `${prefix}_` + Math.random().toString(36).substr(2, 9)
         }
     }
 </script>
