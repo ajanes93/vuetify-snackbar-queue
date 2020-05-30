@@ -17,71 +17,31 @@ Vue.use(VuetifySnackbarQueue)
 >Use in templates
 ```vue
 <template>
-    <v-container grid-list-lg fluid>
-        <v-layout wrap>
-            <v-flex xs2>
-               <v-btn color="primary" @click="addItem">Add to Queue</v-btn>
-            </v-flex>
-        </v-layout>
-        <v-snackbar-queue
-            :items="items"
-            @remove="removeItem"
-        ></v-snackbar-queue>
-    </v-container>
+    <v-snackbar-queue
+        :items="items"
+        @remove="() => {}"
+    ></v-snackbar-queue>
 </template>
-<script>
-	export default {
-		data: () => ({
-		    id: 0,
-		    items: [],
-		    colors: ['warning', 'error', 'info']
-		}),
-		methods: {
-		    addItem () {
-		        const vm = this
-		        const index = vm.randomInt(0, 2)
-		        vm.id++
-		        vm.items.push({
-		            id: vm.id,
-		            color: vm.colors[index],
-		            message: 'This is an example alert'
-		        })  
-		    },
-		    removeItem (id) {
-		        const vm = this
-		        const index = _.findIndex(vm.items, {id})
-		        
-		        if (index !== -1) {
-		            vm.items.splice(index, 1)
-		        }   
-		    },
-		    randomInt(min, max) {
-                return Math.floor(Math.random() * (max - min + 1) ) + min;
-            }
- 		}
-	}
-</script>
 ```
-
 
 ##Development Setup
 
 ### Project setup
 ```
-yarn install
+npm install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-yarn run serve
+npm run serve
 ```
 
 ### Compiles and minifies for production
 ```
-yarn run build
+npm run build
 ```
 
 ### Lints and fixes files
 ```
-yarn run lint
+npm run lint
 ```

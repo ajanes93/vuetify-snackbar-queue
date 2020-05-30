@@ -1,6 +1,7 @@
 const path = require('path')
 
 module.exports = {
+    styleguideDir: 'docs',
     exampleMode: 'collapse',
     renderRootJsx: path.join(__dirname, 'styleguidist/styleguide.root.js'),
     require: [

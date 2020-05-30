@@ -1,4 +1,20 @@
-VSnackbarQueue example:
+# VSnackbarQueue
+>Simple plugin for queueing v-snackbars in Vuetify
+* Extends VSnackbar component and adds items[] prop
+* Queues Snackbars displaying one at a time 
+
+### Plugin Usage
+>Import as plugin in your main.js file
+
+```text
+//main.js
+import Vue from 'vue'
+import VuetifySnackbarQueue from 'vuetify-snackbar-queue'
+
+Vue.use(VuetifySnackbarQueue)
+```
+
+### Example
 
 ```vue
 <template>
