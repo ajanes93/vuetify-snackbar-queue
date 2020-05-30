@@ -18,29 +18,29 @@
             {{ item.message }}
             <v-btn
                 v-if="items.length > 1"
-                icon
-                color="white"
+                :color="nextButtonColor"
                 flat
                 @click="removeItem(item.id)"
             >
-                Next ({{items.length - 1}} more)
+                {{nextButtonText}} ({{items.length - 1}} more)
             </v-btn>
             <v-btn
                 icon
                 v-else
-                color="white"
+                :color="closeButtonColor"
                 flat
                 @click="removeItem(item.id)"
             >
-                <v-icon>close</v-icon>
+                <v-icon>{{closeButtonIcon}}</v-icon>
             </v-btn>
         </v-snackbar>
     </div>
 </template>
 
 <script>
-    import {first, isEmpty} from 'underscore'
-
+    /**
+     * A wrapper component for VSnackbar which supports queueing functionality
+     */
     export default {
         name: 'VSnackbarQueue',
         data: () => ({
@@ -49,54 +49,101 @@
         }),
         props: {
             /**
+             * Position snackbar absolute
+             */
+            absolute: {
+                type: Boolean,
+                default: false
+            },
+            /**
+             * Auto height prop for snackbar
+             */
+            autoHeight: {
+                type: Boolean,
+                default: false
+            },
+            /**
+             * Position snackbar bottom
+             */
+            bottom: {
+                type: Boolean,
+                default: false
+            },
+            /**
+             * The color of the close button
+             */
+            closeButtonColor: {
+                type: String,
+                default: 'white'
+            },
+            /**
+             * The icon of the close button
+             */
+            closeButtonIcon: {
+                type: String,
+                default: 'close'
+            },
+            /**
              * Array for items to display [{id: '', color: '', message: ''}]
              */
             items: {
                 type: Array,
                 required: true
             },
-            value: {
-                required: false,
+            /**
+             * Position snackbar left
+             */
+            left: {
+                type: Boolean,
                 default: false
             },
+            /**
+             * Position snackbar multiline
+             */
+            multiLine: {
+                type: Boolean,
+                default: false
+            },
+            /**
+             * The color of the next button
+             */
+            nextButtonColor: {
+                type: String,
+                default: 'white'
+            },
+            /**
+             * The text to display in the next button
+             */
+            nextButtonText: {
+                type: String,
+                default: 'Next'
+            },
+            /**
+             * Position snackbar right
+             */
+            right: {
+                type: Boolean,
+                default: false
+            },
+            /**
+             * Number of milliseconds to display each snackbar for
+             */
             timeout: {
-                required: false,
+                type: Number,
                 default: 6000
             },
-            color: {
-                required: false,
-                default: 'error'
-            },
+            /**
+             * Position snackbar top
+             */
             top: {
-                required: false,
+                type: Boolean,
                 default: false
             },
-            right: {
-                required: false,
-                default: false
-            },
-            absolute: {
-                required: false,
-                default: false
-            },
-            autoHeight: {
-                required: false,
-                default: false
-            },
-            bottom: {
-                required: false,
-                default: false
-            },
-            left: {
-                required: false,
-                default: false
-            },
-            multiLine: {
-                required: false,
-                default: false
-            },
+            /**
+             * Position snackbar vertical
+             */
             vertical: {
-                required: false,
+                type: Boolean,
                 default: false
             }
         },
@@ -105,8 +152,8 @@
                 const vm = this
                 vm.processing = true
 
-                if (!isEmpty(vm.items)) {
-                    const item = first(vm.items)
+                if (vm.items && Array.isArray(vm.items) && vm.items.length > 0) {
+                    const item = vm.items[0]
                     return vm.timeoutId = setTimeout(() => {
                         vm.removeItem(item.id)
                     }, vm.timeout)
@@ -117,6 +164,9 @@
             removeItem (id) {
                 const vm = this
                 clearTimeout(vm.timeoutId)
+                /**
+                 * @event {Number}
+                 */
                 vm.$emit('remove', id)
 
                 if (vm.items.length > 0) {
