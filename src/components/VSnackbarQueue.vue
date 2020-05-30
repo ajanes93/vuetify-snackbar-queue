@@ -1,35 +1,35 @@
 <template>
     <div>
         <v-snackbar
-            v-for="(item, i) in items"
-            :key="item.id"
-            :value="i === 0"
-            :timeout="timeout"
-            :color="item.color"
-            :top="top"
-            :right="right"
             :absolute="absolute"
             :auto-height="autoHeight"
             :bottom="bottom"
+            :color="item.color"
+            :key="item.id"
             :left="left"
             :multi-line="multiLine"
+            :right="right"
+            :timeout="timeout"
+            :top="top"
+            :value="i === 0"
             :vertical="vertical"
+            v-for="(item, i) in items"
         >
             {{ item.message }}
             <v-btn
-                v-if="items.length > 1"
                 :color="nextButtonColor"
-                flat
                 @click="removeItem(item.id)"
+                flat
+                v-if="items.length > 1"
             >
                 {{nextButtonText}} ({{items.length - 1}} more)
             </v-btn>
             <v-btn
+                :color="closeButtonColor"
+                @click="removeItem(item.id)"
+                flat
                 icon
                 v-else
-                :color="closeButtonColor"
-                flat
-                @click="removeItem(item.id)"
             >
                 <v-icon>{{closeButtonIcon}}</v-icon>
             </v-btn>
