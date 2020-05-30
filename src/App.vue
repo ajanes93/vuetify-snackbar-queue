@@ -20,7 +20,6 @@
 
 <script>
     import VSnackbarQueue from './components/VSnackbarQueue'
-    import VSnackbarQueue from '@/components/VSnackbarQueue'
 
     export default {
         name: 'App',
