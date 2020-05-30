@@ -165,9 +165,11 @@
                 const vm = this
                 clearTimeout(vm.timeoutId)
                 /**
-                 * @event {Number}
+                 * Emit remove event
+                 * @event remove
+                 * @type {number}
                  */
-                vm.$emit('remove', id)
+                this.$emit('remove', id)
 
                 if (vm.items.length > 0) {
                     return vm.processItems()
