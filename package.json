@@ -1,6 +1,6 @@
 {
     "name": "vuetify-snackbar-queue",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
