@@ -3,6 +3,10 @@
 * Extends VSnackbar component and adds items[] prop
 * Queues Snackbars displaying one at a time 
 
+## Docs
+
+See the docs at [Vuetify Snackbar Queue Docs](https://ajanes93.github.io/vuetify-snackbar-queue/)
+
 ##Use as Plugin
 >Import as plugin in your main.js file
 
