@@ -2,7 +2,6 @@
     <div>
         <v-snackbar
             :absolute="absolute"
-            :auto-height="autoHeight"
             :bottom="bottom"
             :color="item.color"
             :key="item.id"
@@ -19,7 +18,7 @@
             <v-btn
                 :color="nextButtonColor"
                 @click="removeItem(item.id)"
-                flat
+                text
                 v-if="items.length > 1"
             >
                 {{nextButtonText}} ({{items.length - 1}} more)
@@ -27,7 +26,7 @@
             <v-btn
                 :color="closeButtonColor"
                 @click="removeItem(item.id)"
-                flat
+                text
                 icon
                 v-else
             >
@@ -52,13 +51,6 @@
              * Position snackbar absolute
              */
             absolute: {
-                type: Boolean,
-                default: false
-            },
-            /**
-             * Auto height prop for snackbar
-             */
-            autoHeight: {
                 type: Boolean,
                 default: false
             },
