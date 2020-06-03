@@ -55,6 +55,15 @@
                 default: false
             },
             /**
+             * @deprecated since v2.0.0
+             *
+             * Auto height prop for snackbar
+             */
+            autoHeight: {
+                type: Boolean,
+                default: false
+            },
+            /**
              * Position snackbar bottom
              */
             bottom: {
