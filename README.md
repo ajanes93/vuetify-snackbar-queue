@@ -6,10 +6,14 @@
 ## Install for use with Vuetify 2.*
 ```npm install vuetify-snackbar-queue```
 
+[See Code Sandbox Example](https://codesandbox.io/s/vuetify-snackbar-queue-s6pt2)
+
 please note that the `auto-height` prop for the `VSnackbar` component was deprecated in Vuetify 2 and is no longer available.
 
 ## Install for use with Vuetify 1.5.*
 ```npm install vuetify-snackbar-queue@1.0.0```
+
+[See Code Sandbox Example](https://codesandbox.io/s/sweet-haze-z2v919669m)
 
 ## Latest component docs
 
