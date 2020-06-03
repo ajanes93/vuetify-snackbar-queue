@@ -7,7 +7,7 @@
 
 See the docs at [Vuetify Snackbar Queue Docs](https://ajanes93.github.io/vuetify-snackbar-queue/)
 
-##Use as Plugin
+## Use as Plugin
 >Import as plugin in your main.js file
 
 ```js
@@ -28,7 +28,7 @@ Vue.use(VuetifySnackbarQueue)
 </template>
 ```
 
-##Development Setup
+## Development Setup
 
 ### Project setup
 ```
