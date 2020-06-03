@@ -1,9 +1,17 @@
 # vuetify-snackbar-queue
 >Simple plugin for queueing v-snackbars in Vuetify
-* Extends VSnackbar component and adds items[] prop
+* Extends VSnackbar component, allowing an array of snackbar items to be passed in.
 * Queues Snackbars displaying one at a time 
 
-## Docs
+## Install for use with Vuetify 2.*
+```npm install vuetify-snackbar-queue```
+
+please note that the `auto-height` prop for the `VSnackbar` component was deprecated in Vuetify 2 and is no longer available.
+
+## Install for use with Vuetify 1.5.*
+```npm install vuetify-snackbar-queue@1.0.0```
+
+## Latest component docs
 
 See the docs at [Vuetify Snackbar Queue Docs](https://ajanes93.github.io/vuetify-snackbar-queue/)
 
