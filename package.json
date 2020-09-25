@@ -16,7 +16,7 @@
     "main": "index.js",
     "dependencies": {
         "vue": "^2.5.17",
-        "vuetify": "^2.2.31"
+        "vuetify": "^2.3.10"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "^4.4.1",
