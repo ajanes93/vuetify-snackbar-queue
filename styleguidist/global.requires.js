@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
+import Vuetify from 'vuetify/lib'
+import {opts} from '../src/plugins/vuetify'
 
-Vue.use(Vuetify, {iconFont: 'md'})
+Vue.use(Vuetify, opts)
