@@ -14,23 +14,27 @@
             :vertical="vertical"
             v-for="(item, i) in items"
         >
-            {{ item.message }}
+            <div class="d-inline-flex py-2">
+                {{ item.message }}
+            </div>
             <v-btn
+                class="float-right"
                 :color="nextButtonColor"
                 @click="removeItem(item.id)"
                 text
                 v-if="items.length > 1"
             >
-                {{nextButtonText}} ({{items.length - 1}} more)
+                {{ nextButtonText }} ({{ items.length - 1 }} more)
             </v-btn>
             <v-btn
+                class="float-right"
                 :color="closeButtonColor"
                 @click="removeItem(item.id)"
                 text
                 icon
                 v-else
             >
-                <v-icon>{{closeButtonIcon}}</v-icon>
+                <v-icon>{{ closeButtonIcon }}</v-icon>
             </v-btn>
         </v-snackbar>
     </div>
