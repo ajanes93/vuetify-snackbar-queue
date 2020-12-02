@@ -15,23 +15,27 @@
             v-for="(item, i) in items"
         >
             {{ item.message }}
-            <v-btn
-                :color="nextButtonColor"
-                @click="removeItem(item.id)"
-                text
-                v-if="items.length > 1"
-            >
-                {{nextButtonText}} ({{items.length - 1}} more)
-            </v-btn>
-            <v-btn
-                :color="closeButtonColor"
-                @click="removeItem(item.id)"
-                text
-                icon
-                v-else
-            >
-                <v-icon>{{closeButtonIcon}}</v-icon>
-            </v-btn>
+            <template v-slot:action="{ attrs }">
+                <v-btn
+                    :color="nextButtonColor"
+                    @click="removeItem(item.id)"
+                    text
+                    v-bind="attrs"
+                    v-if="items.length > 1"
+                >
+                    {{nextButtonText}} ({{items.length - 1}} more)
+                </v-btn>
+                <v-btn
+                    :color="closeButtonColor"
+                    @click="removeItem(item.id)"
+                    text
+                    icon
+                    v-bind="attrs"
+                    v-else
+                >
+                    <v-icon>{{closeButtonIcon}}</v-icon>
+                </v-btn>
+            </template>
         </v-snackbar>
     </div>
 </template>
