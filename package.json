@@ -1,6 +1,6 @@
 {
     "name": "vuetify-snackbar-queue",
-    "version": "2.3.0",
+    "version": "2.3.1",
     "description": ">Simple plugin for queueing v-snackbars in Vuetify * Extends VSnackbar component and adds items[] prop * Queues Snackbars displaying one at a time",
     "author": "Andres Janes <dev@andresjanes.com>",
     "scripts": {
