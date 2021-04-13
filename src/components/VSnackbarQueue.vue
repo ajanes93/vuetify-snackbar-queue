@@ -23,7 +23,7 @@
                     v-bind="attrs"
                     v-if="items.length > 1"
                 >
-                    {{nextButtonText}} ({{items.length - 1}} more)
+                    {{nextButtonText}} ({{items.length - 1}} {{nextButtonCountText}})
                 </v-btn>
                 <v-btn
                     :color="closeButtonColor"
@@ -115,6 +115,13 @@
             nextButtonColor: {
                 type: String,
                 default: 'white'
+            },
+            /**
+             * The text displayed next to the count of snackbars
+             */
+            nextButtonCountText: {
+                type: String,
+                default: 'More'
             },
             /**
              * The text to display in the next button
